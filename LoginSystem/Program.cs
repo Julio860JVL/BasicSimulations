@@ -5,7 +5,17 @@ internal class Program
 {
     public static void Main(string[] args)
     {
-        Console.WriteLine("\nWelcome to the Login System.\n" +
+        string morningOrAfternoon;
+        if (DateTime.Now.Hour <= 11)
+        {
+            morningOrAfternoon = "morning";
+        }
+        else
+        {
+            morningOrAfternoon = "afternoon";
+        }
+
+        Console.WriteLine($"\nGood {morningOrAfternoon} welcome to the Login System.\n" +
             "Select from the following options:");
 
         List<string> options = new List<string> { "Create Account", "Login", "Go Back", "Exit" };
@@ -29,7 +39,8 @@ internal class Program
                 //Console.WriteLine("Go Back");
                 break;
             case "4":
-                //Console.WriteLine("Exit");
+                Console.WriteLine("Good bye!");
+                Environment.Exit(0);
                 break;
             default:
                 Console.WriteLine("Invalid selection. Please try again.");
